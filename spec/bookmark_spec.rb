@@ -28,4 +28,16 @@ describe Bookmark do
     expect(bookmark.title).to eq 'Test Bookmark'
     expect(bookmark.url).to eq 'http://www.example.org'
   end
+
+  it 'deletes a bookmark' do
+    bookmark = Bookmark.create(url: 'http://www.example.org', title: 'Test Bookmark')
+    persisted_data = persisted_data(id: bookmark.id)
+    Bookmark.delete('Test Bookmark')
+    bookmarks = Bookmark.all
+
+    #expect(bookmarks['']).not_to include 'Test Bookmark'
+    #expect(bookmark.id).not_to eq persisted_data['id']
+    expect(bookmark.title).not_to eq 'Test Bookmark'
+    #expect(bookmark.url).to eq 'http://www.example.org'
+  end
 end
