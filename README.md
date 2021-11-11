@@ -18,7 +18,7 @@ Domain model for first user story:
 Connecting to database:
 
 1. Connect to psql
-2. Create the database using the psql command CREATE DATABASE bookmark_manager;
-3. Connect to the database using the pqsl command \c bookmark_manager;
-4. Run the query we have saved in the file db/migrations which is: 01_create_bookmarks_table.sql
+2. Create the database using the psql command CREATE DATABASE bookmark_manager; and CREATE DATABASE bookmark_manager_test;
+3. Connect to the database using the pqsl command \c bookmark_manager; and \c bookmark_manager_test;
+4. Run the query we have saved in the file db/migrations for each database
 5. Run 'rackup' and connect to http://localhost:9292/bookmarks to view bookmarks
